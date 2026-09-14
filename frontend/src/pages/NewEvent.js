@@ -26,7 +26,7 @@ export async function action({ request, params }) {
   });
 
   if (!response.ok) {
-    throw JSON({ message: "Could not save event." }, { status: 500 });
+    throw JSON.stringify({ message: "Could not save event." }, { status: 500 });
   }
   return redirect("/events");
 }

@@ -27,8 +27,10 @@ export async function loader() {
     // throw new Response(JSON.stringify({ message: "Could not fetch events." }), {
     //   status: 500,
     // });
-    throw JSON({ message: "Could not fetch events." }, { status: 500 });
-  } else {
-    return response;
+    throw JSON.stringify(
+      { message: "Could not fetch events." },
+      { status: 500 },
+    );
   }
+  return response.json();
 }
